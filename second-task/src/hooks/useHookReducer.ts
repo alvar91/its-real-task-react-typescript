@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-function useHookReducer<T>(
+export function useHookReducer<T>(
   defaultVal: T,
   reducer: (state: T, action: any) => T
 ) {
@@ -9,4 +9,3 @@ function useHookReducer<T>(
 
   return { state, dispatch };
 }
-export { useHookReducer };

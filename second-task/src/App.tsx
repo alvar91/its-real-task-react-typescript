@@ -1,12 +1,12 @@
+import { useEffect } from "react";
+
 import { useHookReducer } from "./hooks/useHookReducer";
-
 import reducer from "./reducers/item.reducer";
-import { ItemI } from "./interface/ItemI";
-
-import "./App.css";
+import { ItemI } from "./interfaces/ItemI";
 
 import { Button, Space, Layout } from "antd";
-import { useEffect } from "react";
+
+import "./App.css";
 
 const { Footer, Content } = Layout;
 
@@ -19,10 +19,12 @@ function App() {
   );
 
   useEffect(() => {
-    const timerId = setInterval(() => dispatch({ type: "REMOVE" }), 1000);
+    let timerId = null;
+
+    if(state.length > 0) timerId = setInterval(() => dispatch({ type: "REMOVE" }), 1000);
 
     return () => clearInterval(timerId);
-  }, [dispatch]);
+  }, [state, dispatch]);
 
   return (
     <div className="App">
