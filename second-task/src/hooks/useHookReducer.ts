@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-function useLocalStorageReducer<T>(
+function useHookReducer<T>(
   defaultVal: T,
   reducer: (state: T, action: any) => T
 ) {
@@ -9,4 +9,4 @@ function useLocalStorageReducer<T>(
 
   return { state, dispatch };
 }
-export { useLocalStorageReducer };
+export { useHookReducer };

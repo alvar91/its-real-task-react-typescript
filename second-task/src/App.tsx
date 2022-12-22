@@ -1,4 +1,4 @@
-import { useLocalStorageReducer } from "./hooks/useLocalStorageReducer";
+import { useHookReducer } from "./hooks/useHookReducer";
 
 import reducer from "./reducers/item.reducer";
 import { ItemI } from "./interface/ItemI";
@@ -13,7 +13,7 @@ const { Footer, Content } = Layout;
 const initialState: ItemI[] = [];
 
 function App() {
-  const { state, dispatch } = useLocalStorageReducer<ItemI[]>(
+  const { state, dispatch } = useHookReducer<ItemI[]>(
     initialState,
     reducer
   );
