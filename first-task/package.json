@@ -1,0 +1,13 @@
+{
+  "name": "first-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "validateParenthesis.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "29.3.1"
+  }
+}
